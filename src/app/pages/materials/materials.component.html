@@ -1,3 +1,21 @@
+<dx-popup
+[(visible)]="isPopupVisible"
+shading="true"
+>
+  <dx-chart
+    id="chart"
+    [dataSource]="filteredData">
+    <dxi-series
+      argumentField="label"
+      valueField="roughness"
+      name="Rugozitatea medie"
+      type="bar"
+      color="#d8bfa2"
+    >
+    </dxi-series>
+  </dx-chart>
+</dx-popup>
+
 <h2 class="content-block">{{ title }}</h2>
 <div class="dx-card content-block responsive-paddings">
   <dx-button class="dx-button dx-button-normal"(onClick)="clearFilters()">Clear filters</dx-button>

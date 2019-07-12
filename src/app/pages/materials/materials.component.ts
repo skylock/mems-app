@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Deposition, DepositionService } from '../../shared/services/deposition.service';
 import { DxDataGridComponent } from 'devextreme-angular';
-import DevExpress from 'devextreme/bundles/dx.all';
 
 @Component({
   selector: 'app-materials',
@@ -12,6 +11,8 @@ export class MaterialsComponent implements OnInit {
 
   title = 'Materiale MEMS';
   depositionResults: Deposition[];
+  isPopupVisible: boolean;
+  filteredData: any;
 
   @ViewChild(DxDataGridComponent, { static: false }) dataGrid: DxDataGridComponent;
 
@@ -28,7 +29,7 @@ export class MaterialsComponent implements OnInit {
   }
 
   drawChart() {
-    const filteredRows = this.dataGrid.instance.getVisibleRows().map(row => row.data);
-    console.error(filteredRows);
+    this.filteredData = this.dataGrid.instance.getVisibleRows().map(row => row.data);
+    this.isPopupVisible = true;
   }
 }
