@@ -6,6 +6,7 @@ import { SideNavOuterToolbarModule, SideNavInnerToolbarModule, SingleCardModule 
 import { FooterModule, LoginFormModule } from './shared/components';
 import { AuthService, ScreenService, AppInfoService } from './shared/services';
 import { AppRoutingModule } from './app-routing.module';
+import { DepositionService } from './shared/services/deposition.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,12 @@ import { AppRoutingModule } from './app-routing.module';
     LoginFormModule,
     AppRoutingModule
   ],
-  providers: [AuthService, ScreenService, AppInfoService],
+  providers: [
+    AuthService,
+    ScreenService,
+    AppInfoService,
+    DepositionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
