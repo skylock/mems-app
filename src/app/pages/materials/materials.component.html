@@ -1,21 +1,74 @@
 <h2 class="content-block">{{ title }}</h2>
 <div class="dx-card content-block responsive-paddings">
-  <dx-data-grid
-    id="gridContainer"
-    [dataSource]="depositionResults"
-    [columns]="[
-     'label',
-     'current',
-     'argonFlow',
-     'nitrogenFlow',
-     'pressure',
-     'distanceTargetSample',
-     'time',
-     'temperature',
-     'roughness',
-     'adhesion',
-     'intermediateLayer'
-      ]"
-    [showBorders]="true">
+  <dx-data-grid class="dx-card wide-card"
+                [dataSource]="depositionResults"
+                [showBorders]="false"
+                [columnAutoWidth]="true"
+                [columnHidingEnabled]="true">
+
+    <dxi-column
+      dataField="label"
+      caption="Sample"
+      [width]="90"
+      [hidingPriority]="2">
+    </dxi-column>
+    <dxi-column
+      dataField="current"
+      caption="Id"
+      [width]="190"
+      [hidingPriority]="8">
+    </dxi-column>
+    <dxi-column
+      dataField="argonFlow"
+      caption="Qar [cm3/min]"
+      [hidingPriority]="6">
+    </dxi-column>
+    <dxi-column
+      dataField="nitrogenFlow"
+      caption="Q N2 [cm3/min]"
+      [hidingPriority]="5">
+      <!--    <dxo-lookup-->
+      <!--      [dataSource]="priority"-->
+      <!--      valueExpr="value"-->
+      <!--      displayExpr="name">-->
+      <!--    </dxo-lookup>-->
+    </dxi-column>
+    <dxi-column
+      dataField="pressure"
+      caption="P [mtorr]"
+      [allowSorting]="false"
+      [hidingPriority]="7">
+    </dxi-column>
+    <dxi-column
+      dataField="distanceTargetSample"
+      caption="dt-s"
+      [hidingPriority]="3">
+    </dxi-column>
+    <dxi-column
+      dataField="time"
+      caption="Timp"
+      [hidingPriority]="4">
+    </dxi-column>
+    <dxi-column
+      dataField="temperature"
+      caption="Temp"
+      [hidingPriority]="1">
+    </dxi-column>
+    <dxi-column
+      dataField="roughness"
+      caption="Ra"
+      [hidingPriority]="1">
+    </dxi-column>
+    <dxi-column
+      dataField="adhesion"
+      caption="Fad"
+      [hidingPriority]="1">
+    </dxi-column>
+    <dxi-column
+      dataField="intermediateLayer"
+      caption="Int Layer"
+      [hidingPriority]="1">
+    </dxi-column>
   </dx-data-grid>
 </div>
+
