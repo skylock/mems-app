@@ -1,13 +1,14 @@
 <h2 class="content-block">{{ title }}</h2>
-<dx-button class="dx-button dx-button-danger" (onClick)="clearFilter()">Clear filters</dx-button>
+<dx-button class="dx-button dx-button-danger" (onClick)="clearFilter('row')">Clear filters</dx-button>
 <div class="dx-card content-block responsive-paddings">
   <dx-data-grid class="dx-card wide-card"
                 [dataSource]="depositionResults"
                 [showBorders]="false"
                 [columnAutoWidth]="true"
                 [columnHidingEnabled]="true">
-    <dxo-filter-row [visible]="true"></dxo-filter-row>
     <dxo-header-filter [visible]="true" [allowSearch]="true"></dxo-header-filter>
+    <dxo-filter-row [visible]="true"></dxo-filter-row>
+
     <dxi-column
       dataField="label"
       caption="Sample"
