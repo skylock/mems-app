@@ -16,7 +16,7 @@ export class ProfileComponent {
       LastName: 'Copil',
       Prefix: 'Mr.',
       Position: 'Student',
-      Picture: 'https://randomuser.me/api/portraits/men/79.jpg',
+      Picture: 'men/79.jpg',
       BirthDate: new Date('1980/11/15'),
       HireDate: new Date('2019/07/15'),
       /* tslint:disable-next-line:max-line-length */
