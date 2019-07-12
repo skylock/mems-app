@@ -23,7 +23,8 @@ export class MaterialsComponent implements OnInit {
   ngOnInit() {
   }
 
-  clearFilter(filterType: string) {
-    this.dataGrid.instance.clearFilter(filterType);
+  clearFilters() {
+    this.dataGrid.instance.clearFilter('row');
+    this.dataGrid.instance.clearFilter('header');
   }
 }
