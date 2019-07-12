@@ -1,11 +1,12 @@
 <dx-popup
   class="popup"
   [showTitle]="true"
-  title="Rugozitatea medie"
+  [title]="popupTitle"
   [dragEnabled]="false"
   [closeOnOutsideClick]="true"
   [(visible)]="isPopupVisible"
-  shading="true"
+  (onShown)="onShown()"
+  [shading]="true"
 >
   <div class="dx-card content-block responsive-paddings">
     <dx-chart
