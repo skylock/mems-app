@@ -1,19 +1,26 @@
 <dx-popup
-[(visible)]="isPopupVisible"
-shading="true"
+  class="popup"
+  [showTitle]="true"
+  title="Chart"
+  [dragEnabled]="false"
+  [closeOnOutsideClick]="true"
+  [(visible)]="isPopupVisible"
+  shading="true"
 >
-  <dx-chart
-    id="chart"
-    [dataSource]="filteredData">
-    <dxi-series
-      argumentField="label"
-      valueField="roughness"
-      name="Rugozitatea medie"
-      type="bar"
-      color="#d8bfa2"
-    >
-    </dxi-series>
-  </dx-chart>
+  <div class="dx-card content-block responsive-paddings">
+    <dx-chart
+      id="chart"
+      [dataSource]="filteredData">
+      <dxi-series
+        argumentField="label"
+        valueField="roughness"
+        name="Rugozitatea medie"
+        type="bar"
+        color="#d8bfa2"
+      >
+      </dxi-series>
+    </dx-chart>
+  </div>
 </dx-popup>
 
 <h2 class="content-block">{{ title }}</h2>
@@ -30,20 +37,25 @@ shading="true"
     (onClick)="drawChart()"
     icon="chart">
   </dx-button>
-  
+
   <dx-data-grid class="dx-card wide-card"
+                id="gridContainer"
                 [dataSource]="depositionResults"
                 [showBorders]="false"
                 [columnAutoWidth]="true"
-                [columnHidingEnabled]="true">
+                [columnHidingEnabled]="true"
+  >
     <dxo-load-panel
       [enabled]="true">
     </dxo-load-panel>
 
     <dxo-header-filter [visible]="true" [allowSearch]="true"></dxo-header-filter>
-    <dxo-filter-row [visible]="true"></dxo-filter-row>
+    <dxo-filter-row
+      [visible]="true">
+    </dxo-filter-row>
 
     <dxi-column
+      class="cls"
       dataField="label"
       caption="Sample"
     >
