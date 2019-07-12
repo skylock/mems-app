@@ -1,4 +1,21 @@
 <h2 class="content-block">{{ title }}</h2>
 <div class="dx-card content-block responsive-paddings">
-  Put your content here
+  <dx-data-grid
+    id="gridContainer"
+    [dataSource]="depositionResults"
+    [columns]="[
+     'label',
+     'current',
+     'argonFlow',
+     'nitrogenFlow',
+     'pressure',
+     'distanceTargetSample',
+     'time',
+     'temperature',
+     'roughness',
+     'adhesion',
+     'intermediateLayer'
+      ]"
+    [showBorders]="true">
+  </dx-data-grid>
 </div>

@@ -8,12 +8,12 @@ import { Deposition, DepositionService } from '../../shared/services/deposition.
 })
 export class MaterialsComponent implements OnInit {
   title = 'Materiale MEMS';
-  dataSource: Deposition[];
+  depositionResults: Deposition[];
 
-  constructor(service: DepositionService) {
+  constructor(depositionService: DepositionService) {
 
-    this.dataSource = service.getResults();
-    console.log('depuneri', this.dataSource);
+    this.depositionResults = depositionService.getResults();
+    console.log('depositions', this.depositionResults);
   }
 
   ngOnInit() {
