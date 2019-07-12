@@ -1,5 +1,7 @@
 <h2 class="content-block">{{ title }}</h2>
-<dx-button class="dx-button dx-button-danger" (onClick)="clearFilters()">Clear filters</dx-button>
+<div class="responsive-paddings">
+  <dx-button class="dx-button dx-button-normal"(onClick)="clearFilters()">Clear filters</dx-button>
+</div>
 <div class="dx-card content-block responsive-paddings">
   <dx-data-grid class="dx-card wide-card"
                 [dataSource]="depositionResults"
