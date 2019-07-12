@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Deposition, DepositionService } from '../../shared/services/deposition.service';
 import { DxDataGridComponent } from 'devextreme-angular';
+import DevExpress from 'devextreme/bundles/dx.all';
 
 @Component({
   selector: 'app-materials',
@@ -15,9 +16,7 @@ export class MaterialsComponent implements OnInit {
   @ViewChild(DxDataGridComponent, { static: false }) dataGrid: DxDataGridComponent;
 
   constructor(depositionService: DepositionService) {
-
     this.depositionResults = depositionService.getResults();
-    console.log('depositions', this.depositionResults);
   }
 
   ngOnInit() {
@@ -26,5 +25,10 @@ export class MaterialsComponent implements OnInit {
   clearFilters() {
     this.dataGrid.instance.clearFilter('row');
     this.dataGrid.instance.clearFilter('header');
+  }
+
+  drawChart() {
+    const filteredRows = this.dataGrid.instance.getVisibleRows().map(row => row.data);
+    console.error(filteredRows);
   }
 }
