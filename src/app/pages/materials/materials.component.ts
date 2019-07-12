@@ -11,8 +11,8 @@ export class MaterialsComponent implements OnInit {
 
   title = 'Materiale MEMS';
   depositionResults: Deposition[];
-  isPopupVisible: boolean;
-  filteredData: any;
+  isPopupVisible = false ;
+  filteredData = null;
 
   @ViewChild(DxDataGridComponent, { static: false }) dataGrid: DxDataGridComponent;
 
