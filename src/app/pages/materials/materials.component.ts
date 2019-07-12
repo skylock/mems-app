@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./materials.component.css']
 })
 export class MaterialsComponent implements OnInit {
+  title = 'Materiale MEMS';
 
   constructor() { }
 
