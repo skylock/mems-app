@@ -17,5 +17,10 @@ export const navigation = [
         path: '/display-data'
       }
     ]
+  },
+  {
+    text: 'Materials',
+    path: 'pages/materials',
+    icon: 'folder'
   }
 ];

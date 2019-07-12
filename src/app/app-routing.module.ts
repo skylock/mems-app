@@ -6,8 +6,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { DisplayDataComponent } from './pages/display-data/display-data.component';
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
+import { MaterialsComponent } from './pages/materials/materials.component';
 
 const routes: Routes = [
+  {
+    path: 'pages/materials',
+    component: MaterialsComponent,
+    canActivate: [ AuthGuardService ]
+  },
   {
     path: 'display-data',
     component: DisplayDataComponent,
@@ -39,6 +45,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes), DxDataGridModule, DxFormModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
-  declarations: [HomeComponent, ProfileComponent, DisplayDataComponent]
+  declarations: [HomeComponent, ProfileComponent, DisplayDataComponent, MaterialsComponent]
 })
 export class AppRoutingModule { }
