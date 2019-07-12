@@ -18,8 +18,19 @@ shading="true"
 
 <h2 class="content-block">{{ title }}</h2>
 <div class="dx-card content-block responsive-paddings">
-  <dx-button class="dx-button dx-button-normal" (onClick)="clearFilters()">Clear filters</dx-button>
-  <dx-button class="dx-button dx-button-normal" (onClick)="drawChart()">Draw chart</dx-button>
+  <dx-button
+    type="normal"
+    text="Reset"
+    (onClick)="clearFilters()"
+    icon="clear">
+  </dx-button>
+  <dx-button
+    text="Chart"
+    type="normal"
+    (onClick)="drawChart()"
+    icon="chart">
+  </dx-button>
+  
   <dx-data-grid class="dx-card wide-card"
                 [dataSource]="depositionResults"
                 [showBorders]="false"
