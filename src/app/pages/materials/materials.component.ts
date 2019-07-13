@@ -63,6 +63,7 @@ export class MaterialsComponent implements OnInit {
       widget: 'dxButton',
       options: {
         text: 'Chart',
+        hint: 'Draw Chart Graph',
         icon: 'chart',
         onClick: this.drawChart.bind(this)
       }
@@ -70,6 +71,7 @@ export class MaterialsComponent implements OnInit {
       location: 'after',
       widget: 'dxButton',
       options: {
+        hint: 'Clear Filters',
         icon: 'refresh',
         onClick: this.refreshDataGrid.bind(this)
       }
