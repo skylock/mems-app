@@ -1,0 +1,44 @@
+@import "../../../themes/generated/variables.base.scss";
+
+::ng-deep #chart {
+  height: 440px;
+  width: 95%;
+}
+
+/* entire toolbar panel */
+::ng-deep #gridContainer .dx-datagrid-header-panel {
+  padding: 0;
+  background-color: rgba(245, 235, 223, 0.6);
+}
+
+/* toolbar height */
+::ng-deep #gridContainer .dx-datagrid-header-panel .dx-toolbar-items-container {
+  height: 70px;
+}
+
+/* toolbar container */
+::ng-deep #gridContainer .dx-datagrid-header-panel .dx-toolbar {
+  margin: 0;
+  padding-right: 20px;
+  background-color: transparent;
+}
+
+::ng-deep #gridContainer .dx-datagrid-header-panel .dx-toolbar-item-content .dx-button {
+  /*background-color: rgba(216, 191, 162, 0.6);*/
+  height: 70px;
+}
+
+::ng-deep #gridContainer .dx-datagrid-header-panel .dx-toolbar-item-content .dx-state-hover {
+  color: #ee3900;
+  background-color: rgba(216, 191, 162, 0.6)
+}
+
+/* toolbar before container | not first item */
+/*::ng-deep #gridContainer .dx-datagrid-header-panel .dx-toolbar-before .dx-toolbar-item:not(:first-child) {*/
+/*  background-color: rgba(103, 171, 255, 0.6);*/
+/*  height: auto;*/
+/*}*/
+
+/*::ng-deep #gridContainer .dx-datagrid-header-panel .dx-toolbar-before .dx-toolbar-item:last-child {*/
+/*  padding-right: 10px;*/
+/*}*/
