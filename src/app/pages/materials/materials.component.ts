@@ -17,9 +17,11 @@ export class MaterialsComponent implements OnInit {
   yAxisFilterTypes: any;
   xAxisCurrentFilter: any;
   yAxisCurrentFilter: any;
-
   isSplineChart = false;
   chartType = 'bar';
+  valueAxisTitle: any;
+  argumentAxisTitle: any;
+
   @ViewChild(DxDataGridComponent, { static: false }) dataGrid: DxDataGridComponent;
 
   constructor(depositionService: DepositionService) {
@@ -56,10 +58,14 @@ export class MaterialsComponent implements OnInit {
 
     this.xAxisFilterTypes = filterTypes;
     this.xAxisCurrentFilter = this.xAxisFilterTypes[0].key;
+    this.argumentAxisTitle = this.xAxisFilterTypes[0].name;
+
     console.log('xAxis onInit', this.xAxisCurrentFilter);
 
     this.yAxisFilterTypes = filterTypes;
     this.yAxisCurrentFilter = this.yAxisFilterTypes[6].key;
+    this.valueAxisTitle = this.xAxisFilterTypes[6].name;
+
     console.log('yAxis onInit', this.yAxisCurrentFilter);
   }
 
@@ -130,11 +136,13 @@ export class MaterialsComponent implements OnInit {
 
   onXAxisValueChanged($event: any) {
     // this.yAxisTitle = this.xAxisFilterTypes.filter(f => f.key === this.xAxisCurrentFilter);
+    this.argumentAxisTitle = $event;
     console.log('onXAxisValueChanged', $event);
   }
 
   onYAxisValueChanged($event: any) {
     // this.xAxisTitle = this.yAxisFilterTypes.filter(f => f.key === this.yAxisCurrentFilter);
+    this.valueAxisTitle = $event;
     console.log('onYAxisValueChanged', $event);
   }
 }
