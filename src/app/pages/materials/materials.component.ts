@@ -10,7 +10,6 @@ import { DxDataGridComponent } from 'devextreme-angular';
 export class MaterialsComponent implements OnInit {
 
   title = 'Materiale MEMS';
-  popupTitle: string;
   depositionResults: Deposition[];
   isPopupVisible: boolean;
   filteredData: any;
@@ -29,10 +28,6 @@ export class MaterialsComponent implements OnInit {
   drawChart() {
     this.filteredData = this.dataGrid.instance.getVisibleRows().map(row => row.data);
     this.isPopupVisible = true;
-  }
-
-  onShown() {
-    this.popupTitle = 'Rugozitatea medie';
   }
 
   onToolbarPreparing(e) {

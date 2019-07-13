@@ -1,12 +1,4 @@
-<dx-popup class="popup"
-  [showTitle]="true"
-  [title]="popupTitle"
-  [dragEnabled]="false"
-  [closeOnOutsideClick]="true"
-  [(visible)]="isPopupVisible"
-  (onShown)="onShown()"
-  [shading]="true"
->
+<app-modal title="Rugozitatea medie" [(visible)]="isPopupVisible">
   <div class="dx-card content-block responsive-paddings">
     <dx-chart
       id="chart"
@@ -29,7 +21,7 @@
       <dxo-export [enabled]="true"></dxo-export>
     </dx-chart>
   </div>
-</dx-popup>
+</app-modal>
 
 <h2 class="content-block">{{ title }}</h2>
 <div class="dx-card content-block responsive-paddings">
