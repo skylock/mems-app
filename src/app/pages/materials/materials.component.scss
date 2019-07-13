@@ -20,6 +20,10 @@ $color-highlight: #ee3900;
     height: $toolbar-item-height;
 
     // toolbar is split in 3 sections before | center | after
+    .dx-toolbar-before {
+      padding-left: 15px;
+    }
+
     .dx-toolbar-before, .dx-toolbar-center {
       .dx-button-text {
        display: block;

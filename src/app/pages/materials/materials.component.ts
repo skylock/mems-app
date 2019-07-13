@@ -40,6 +40,7 @@ export class MaterialsComponent implements OnInit {
       location: 'before',
       widget: 'dxButton',
       options: {
+        type: 'Normal',
         text: 'Add',
         icon: 'add'
       }
