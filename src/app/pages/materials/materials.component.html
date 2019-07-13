@@ -7,6 +7,9 @@
           argumentField - x axis
              valueField - y axis
        -->
+      <dxo-argument-axis
+        title="{{xAxisCurrentFilter}}"
+      ></dxo-argument-axis>
       <dxi-series
         [argumentField]="xAxisCurrentFilter"
         [valueField]="yAxisCurrentFilter"
@@ -43,7 +46,9 @@
           [items]="yAxisFilterTypes"
           [(value)]="yAxisCurrentFilter"
           valueExpr="key"
-          displayExpr="name"></dx-select-box>
+          displayExpr="name"
+          (onValueChanged)="onYAxisValueChanged()">
+          ></dx-select-box>
       </div>
       <div class="option">
         <span>X Axis</span>
@@ -52,7 +57,9 @@
           [items]="xAxisFilterTypes"
           [(value)]="xAxisCurrentFilter"
           valueExpr="key"
-          displayExpr="name"></dx-select-box>
+          displayExpr="name"
+          (onValueChanged)="onXAxisValueChanged()">
+        ></dx-select-box>
       </div>
       <div class="option">
         <dx-check-box

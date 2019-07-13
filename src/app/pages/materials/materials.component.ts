@@ -124,6 +124,15 @@ export class MaterialsComponent implements OnInit {
   }
 
   toggleChartType($event) {
+    console.log('clicked', $event.value);
     this.chartType =  !this.isSplineChart ? 'bar' : 'spline';
+  }
+
+  onXAxisValueChanged() {
+    console.log('onChange xAxis', this.xAxisCurrentFilter);
+  }
+
+  onYAxisValueChanged() {
+    console.log('onChange yAxis', this.yAxisCurrentFilter);
   }
 }
