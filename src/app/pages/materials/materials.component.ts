@@ -60,7 +60,7 @@ export class MaterialsComponent implements OnInit {
     console.log('xAxis onInit', this.xAxisCurrentFilter);
 
     this.yAxisFilterTypes = filterTypes;
-    this.yAxisCurrentFilter = this.yAxisFilterTypes[0].key;
+    this.yAxisCurrentFilter = this.yAxisFilterTypes[6].key;
     console.log('yAxis onInit', this.yAxisCurrentFilter);
   }
 
@@ -124,15 +124,6 @@ export class MaterialsComponent implements OnInit {
   }
 
   toggleChartType($event) {
-    console.log('clicked', $event.value);
     this.chartType =  !this.isSplineChart ? 'bar' : 'spline';
-  }
-
-  onXAxisValueChanged() {
-    console.log('onChange xAxis', this.xAxisCurrentFilter);
-  }
-
-  onYAxisValueChanged() {
-    console.log('onChange yAxis', this.yAxisCurrentFilter);
   }
 }
