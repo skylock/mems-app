@@ -7,10 +7,11 @@ import { FooterModule, LoginFormModule } from './shared/components';
 import { AuthService, ScreenService, AppInfoService } from './shared/services';
 import { AppRoutingModule } from './app-routing.module';
 import { DepositionService } from './shared/services/deposition.service';
+import { ModalModule } from './shared/components/modal/modal.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,7 +20,8 @@ import { DepositionService } from './shared/services/deposition.service';
     SingleCardModule,
     FooterModule,
     LoginFormModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ModalModule
   ],
   providers: [
     AuthService,

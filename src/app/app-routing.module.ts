@@ -7,6 +7,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { DisplayDataComponent } from './pages/display-data/display-data.component';
 import { DevExtremeModule, DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import { MaterialsComponent } from './pages/materials/materials.component';
+import { ModalModule } from './shared/components/modal/modal.component';
 
 const routes: Routes = [
   {
@@ -42,7 +43,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), DxDataGridModule, DxFormModule, DevExtremeModule],
+  imports: [RouterModule.forRoot(routes), DxDataGridModule, DxFormModule, DevExtremeModule, ModalModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
   declarations: [HomeComponent, ProfileComponent, DisplayDataComponent, MaterialsComponent]
