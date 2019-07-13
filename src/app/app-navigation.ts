@@ -5,7 +5,23 @@ export const navigation = [
     icon: 'home'
   },
   {
-    text: 'Pulverizare catodică',
+    text: 'Evaporare Termică',
+    icon: 'folder',
+    items: [
+      {
+        text: 'Rezistivă',
+        path: '/display-data'
+      },
+      {
+        text: 'Inductivă',
+      },
+      {
+        text: 'Arc Electric',
+      }
+    ]
+  },
+  {
+    text: 'Pulverizare Catodică',
     icon: 'folder',
     items: [
       {

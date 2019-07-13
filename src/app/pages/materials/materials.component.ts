@@ -9,7 +9,7 @@ import { DxDataGridComponent } from 'devextreme-angular';
 })
 export class MaterialsComponent implements OnInit {
 
-  title = 'Materiale MEMS';
+  title = 'Rezultate Pulverizare Catodică - Magnetron';
   depositionResults: Deposition[];
   isPopupVisible: boolean;
   filteredData: any;
