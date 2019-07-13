@@ -1,5 +1,10 @@
 @import "../../../themes/generated/variables.base.scss";
 
+$toolbar-item-height: 70px;
+$color-primary-light: rgba(245, 235, 223, 0.6);
+$color-primary-dark: rgba(216, 191, 162, 0.6);
+$color-highlight: #ee3900;
+
 ::ng-deep #chart {
   height: 440px;
   width: 95%;
@@ -8,11 +13,18 @@
 /* entire toolbar panel */
 ::ng-deep #gridContainer .dx-datagrid-header-panel {
   padding: 0;
-  background-color: rgba(245, 235, 223, 0.6);
+  background-color: $color-primary-light;
 
   /* toolbar height */
   .dx-toolbar-items-container {
-    height: 70px;
+    height: $toolbar-item-height;
+
+    .dx-toolbar-before, .dx-toolbar-center {
+      .dx-button-text {
+       display: block;
+     }
+    }
+
   }
 
   /* toolbar container */
@@ -22,16 +34,17 @@
     background-color: transparent;
   }
 
-  .dx-toolbar-item-content {
+  .dx-toolbar-item {
     .dx-button {
-      /*background-color: rgba(216, 191, 162, 0.6);*/
-      height: 70px;
+      height: $toolbar-item-height;
     }
 
     .dx-state-hover {
-      color: #ee3900;
-      background-color: rgba(216, 191, 162, 0.6)
+      color: $color-highlight;
+      i {
+        color: $color-highlight;
+      }
+      background-color: $color-primary-dark
     }
-
   }
 }
