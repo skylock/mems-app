@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppInfoService } from '../../shared/services';
 
 @Component({
   templateUrl: 'home.component.html',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class HomeComponent {
-  constructor() {}
+  constructor(public appInfo: AppInfoService) {
+
+  }
 }
