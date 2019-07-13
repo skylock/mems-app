@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Deposition, DepositionService } from '../../shared/services/deposition.service';
 import { DxDataGridComponent } from 'devextreme-angular';
+import { collectAllDependants } from 'ts-loader/dist/types/utils';
 
 @Component({
   selector: 'app-materials',
@@ -11,10 +12,13 @@ export class MaterialsComponent implements OnInit {
 
   title = 'Experimental Results - Direct Current Sputtering ';
   depositionResults: Deposition[];
+  chartFilter = {
+    xAxisTypes: [],
+    yAxisTypes: []
+  };
+
   isPopupVisible: boolean;
   filteredData: any;
-  xAxisFilterTypes: any;
-  yAxisFilterTypes: any;
   xAxisCurrentFilter: any;
   yAxisCurrentFilter: any;
   isSplineChart = false;
@@ -56,17 +60,13 @@ export class MaterialsComponent implements OnInit {
 
     this.depositionResults = depositionService.getResults();
 
-    this.xAxisFilterTypes = filterTypes;
-    this.xAxisCurrentFilter = this.xAxisFilterTypes[0].key;
-    this.argumentAxisTitle = this.xAxisFilterTypes[0].name;
+    this.chartFilter = {
+      xAxisTypes: filterTypes,
+      yAxisTypes: filterTypes
+    };
 
-    console.log('xAxis onInit', this.xAxisCurrentFilter);
-
-    this.yAxisFilterTypes = filterTypes;
-    this.yAxisCurrentFilter = this.yAxisFilterTypes[6].key;
-    this.valueAxisTitle = this.xAxisFilterTypes[6].name;
-
-    console.log('yAxis onInit', this.yAxisCurrentFilter);
+    this.xAxisCurrentFilter = this.chartFilter.xAxisTypes[0].key;
+    this.yAxisCurrentFilter = this.chartFilter.xAxisTypes[6].key;
   }
 
   ngOnInit() {

@@ -62,7 +62,7 @@
         <span>Y Axis</span>
         <dx-select-box
           id="yAxisFilter"
-          [items]="yAxisFilterTypes"
+          [items]="chartFilter.yAxisTypes"
           [(value)]="yAxisCurrentFilter"
           (valueChange)="onYAxisValueChanged($event)"
           valueExpr="key"
@@ -74,7 +74,7 @@
         <span>X Axis</span>
         <dx-select-box
           id="xAxisFilter"
-          [items]="xAxisFilterTypes"
+          [items]="chartFilter.xAxisTypes"
           [(value)]="xAxisCurrentFilter"
           valueExpr="key"
           displayExpr="name"
