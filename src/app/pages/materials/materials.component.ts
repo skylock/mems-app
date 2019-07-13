@@ -43,33 +43,12 @@ export class MaterialsComponent implements OnInit {
   }
 
   onToolbarPreparing(e) {
-    e.toolbarOptions.items.unshift({
-      location: 'before',
-      template: 'totalGroupCount'
-    }, {
-      location: 'before',
-      widget: 'dxSelectBox',
-      options: {
-        width: 200,
-        items: [{
-          value: 'CustomerStoreState',
-          text: 'Grouping by State'
-        }, {
-          value: 'Employee',
-          text: 'Grouping by Employee'
-        }],
-        displayExpr: 'text',
-        valueExpr: 'value',
-        value: 'CustomerStoreState',
-        onValueChanged: this.groupChanged.bind(this)
-      }
-    }, {
+    e.toolbarOptions.items.unshift( {
       location: 'before',
       widget: 'dxButton',
       options: {
-        width: 136,
-        text: 'Collapse All',
-        onClick: this.collapseAllClick.bind(this)
+        icon: 'chart',
+        onClick: this.drawChart.bind(this)
       }
     }, {
       location: 'after',
@@ -77,6 +56,14 @@ export class MaterialsComponent implements OnInit {
       options: {
         icon: 'refresh',
         onClick: this.refreshDataGrid.bind(this)
+      }
+    }, {
+      location: 'before',
+      widget: 'dxButton',
+      options: {
+        text: 'Clear Filters',
+        icon: 'clear',
+        onClick: this.clearFilters.bind(this)
       }
     });
   }

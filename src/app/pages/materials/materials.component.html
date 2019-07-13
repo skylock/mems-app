@@ -33,19 +33,6 @@
 
 <h2 class="content-block">{{ title }}</h2>
 <div class="dx-card content-block responsive-paddings">
-  <dx-button
-    type="normal"
-    text="Reset"
-    (onClick)="clearFilters()"
-    icon="clear">
-  </dx-button>
-  <dx-button
-    text="Chart"
-    type="normal"
-    (onClick)="drawChart()"
-    icon="chart">
-  </dx-button>
-
   <dx-data-grid class="dx-card wide-card"
                 id="gridContainer"
                 [dataSource]="depositionResults"
@@ -54,8 +41,8 @@
                 [columnHidingEnabled]="true"
                 [hoverStateEnabled]="true"
                 (onToolbarPreparing)="onToolbarPreparing($event)">
-  >
-    <dxo-grouping [autoExpandAll]="true"></dxo-grouping>
+
+    <dxo-grouping [autoExpandAll]="expanded"></dxo-grouping>
     <dxo-column-chooser [enabled]="true"></dxo-column-chooser>
     <dxo-load-panel [enabled]="true"></dxo-load-panel>
 
