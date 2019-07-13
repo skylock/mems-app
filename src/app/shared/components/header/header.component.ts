@@ -5,6 +5,7 @@ import { AuthService } from '../../services';
 import { UserPanelModule } from '../user-panel/user-panel.component';
 import { DxButtonModule } from 'devextreme-angular/ui/button';
 import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -24,7 +25,10 @@ export class HeaderComponent {
 
   userMenuItems = [{
     text: 'Profile',
-    icon: 'user'
+    icon: 'user',
+    onClick: () => {
+      this.router.navigate(['/profile']);
+    }
   }, {
     text: 'Logout',
     icon: 'runner',
@@ -33,7 +37,7 @@ export class HeaderComponent {
     }
   }];
 
-  constructor(private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   toggleMenu = () => {
     this.menuToggle.emit();
