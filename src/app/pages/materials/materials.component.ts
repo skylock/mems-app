@@ -27,7 +27,7 @@ export class MaterialsComponent implements OnInit {
     const filterTypes = [
       {
         key: 'label',
-        name: 'Sample'
+        name: 'Nume Proba'
       },
       {
         key: 'nitrogenFlow',
