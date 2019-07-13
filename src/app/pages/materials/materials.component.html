@@ -11,10 +11,10 @@
         name="temperature"
         [allowDecimals]="false">
         <dxo-title text="Temperature &deg;C">
-          <dxo-font color="#ff950c"></dxo-font>
+<!--          <dxo-font color="#ff950c"></dxo-font>-->
         </dxo-title>
         <dxo-label>
-          <dxo-font color="#ff950c"></dxo-font>
+<!--          <dxo-font color="#ff950c"></dxo-font>-->
         </dxo-label>
       </dxi-value-axis>
 
@@ -22,17 +22,17 @@
         name="temperature"
         [allowDecimals]="false">
         <dxo-title text="Temperature &deg;C">
-          <dxo-font color="#ff950c"></dxo-font>
+<!--          <dxo-font color="#ff950c"></dxo-font>-->
         </dxo-title>
         <dxo-label>
-          <dxo-font color="#ff950c"></dxo-font>
+<!--          <dxo-font color="#ff950c"></dxo-font>-->
         </dxo-label>
       </dxo-argument-axis>
 
       <dxi-series
         [argumentField]="xAxisCurrentFilter"
         [valueField]="yAxisCurrentFilter"
-        name="Rugozitatea medie"
+        [name]="xAxisCurrentFilter"
         [type]="chartType"
         color="#d8bfa2"
       >
@@ -64,9 +64,10 @@
           id="yAxisFilter"
           [items]="yAxisFilterTypes"
           [(value)]="yAxisCurrentFilter"
+          (valueChange)="onYAxisValueChanged($event)"
           valueExpr="key"
           displayExpr="name"
-          (onValueChanged)="onYAxisValueChanged()">
+        >
           ></dx-select-box>
       </div>
       <div class="option">
@@ -77,7 +78,7 @@
           [(value)]="xAxisCurrentFilter"
           valueExpr="key"
           displayExpr="name"
-          (onValueChanged)="onXAxisValueChanged()">
+          (valueChange)="onXAxisValueChanged($event)">
         ></dx-select-box>
       </div>
       <div class="option">

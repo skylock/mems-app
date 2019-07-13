@@ -17,8 +17,6 @@ export class MaterialsComponent implements OnInit {
   yAxisFilterTypes: any;
   xAxisCurrentFilter: any;
   yAxisCurrentFilter: any;
-  xAxisTitle: any;
-  yAxisTitle: any;
 
   isSplineChart = false;
   chartType = 'bar';
@@ -68,9 +66,10 @@ export class MaterialsComponent implements OnInit {
   ngOnInit() {
   }
 
-  drawChart() {
+  drawChart($e) {
     this.filteredData = this.dataGrid.instance.getVisibleRows().map(row => row.data);
     console.log('[drawChart clicked] rows =>', this.filteredData);
+    console.log('$e', $e);
     this.isPopupVisible = true;
   }
 
@@ -129,13 +128,13 @@ export class MaterialsComponent implements OnInit {
     this.chartType =  !this.isSplineChart ? 'bar' : 'spline';
   }
 
-  onXAxisValueChanged() {
-    this.yAxisTitle = this.xAxisFilterTypes.filter(f => f.key === this.xAxisCurrentFilter);
-    console.log('onChange chartTitle.yAxis', this.xAxisTitle);
+  onXAxisValueChanged($event: any) {
+    // this.yAxisTitle = this.xAxisFilterTypes.filter(f => f.key === this.xAxisCurrentFilter);
+    console.log('onXAxisValueChanged', $event);
   }
 
-  onYAxisValueChanged() {
-    this.xAxisTitle = this.yAxisFilterTypes.filter(f => f.key === this.yAxisCurrentFilter);
-    console.log('onChange chartTitle.yAxis', this.xAxisTitle);
+  onYAxisValueChanged($event: any) {
+    // this.xAxisTitle = this.yAxisFilterTypes.filter(f => f.key === this.yAxisCurrentFilter);
+    console.log('onYAxisValueChanged', $event);
   }
 }
