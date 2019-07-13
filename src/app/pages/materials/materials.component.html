@@ -7,8 +7,25 @@
           argumentField - x axis
              valueField - y axis
        -->
+      <dxi-value-axis
+        name="temperature"
+        [allowDecimals]="false">
+        <dxo-title text="Temperature &deg;C">
+          <dxo-font color="#ff950c"></dxo-font>
+        </dxo-title>
+        <dxo-label>
+          <dxo-font color="#ff950c"></dxo-font>
+        </dxo-label>
+      </dxi-value-axis>
       <dxo-argument-axis
-        title="{{xAxisCurrentFilter}}"
+        name="temperature"
+        [allowDecimals]="false">
+        <dxo-title text="Temperature &deg;C">
+          <dxo-font color="#ff950c"></dxo-font>
+        </dxo-title>
+        <dxo-label>
+          <dxo-font color="#ff950c"></dxo-font>
+        </dxo-label>
       ></dxo-argument-axis>
       <dxi-series
         [argumentField]="xAxisCurrentFilter"
