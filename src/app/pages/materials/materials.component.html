@@ -7,7 +7,7 @@
         argumentField="label"
         valueField="roughness"
         name="Rugozitatea medie"
-        type="bar"
+        [type]="chartType"
         color="#d8bfa2"
       >
         <dxo-label [visible]="true" >
@@ -44,7 +44,7 @@
       </div>
       <div class="option">
         <dx-check-box
-          text="Spline Chart"
+          [text]="chartType"
           [(value)]="isSplineChart"
           (onValueChanged)="toggleChartType($event)"></dx-check-box>
       </div>
