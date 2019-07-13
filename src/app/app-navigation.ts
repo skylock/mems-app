@@ -1,38 +1,35 @@
 export const navigation = [
   {
-    text: 'Acasă',
+    text: 'Home',
     path: '/home',
     icon: 'home'
   },
   {
-    text: 'Evaporare Termică',
+    text: 'Thermal Evaporation',
     icon: 'folder',
     items: [
       {
-        text: 'Rezistivă',
+        text: 'Resistance',
         path: '/display-data'
       },
       {
-        text: 'Inductivă',
+        text: 'Inductive',
       },
       {
-        text: 'Arc Electric',
+        text: 'Electric Arc',
       }
     ]
   },
   {
-    text: 'Pulverizare Catodică',
+    text: 'Sputtering',
     icon: 'folder',
     items: [
       {
-        text: 'Magnetron',
+        text: 'Direct Current',
         path: '/materials'
       },
       {
-        text: 'Curent Continuu',
-      },
-      {
-        text: 'Radio Frecventă',
+        text: 'Radio Frequency',
       }
     ]
   }

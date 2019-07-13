@@ -26,6 +26,10 @@ export class MaterialsComponent implements OnInit {
   constructor(depositionService: DepositionService) {
     const filterTypes = [
       {
+        key: 'label',
+        name: 'Sample'
+      },
+      {
         key: 'nitrogenFlow',
         name: 'Debit de Azot'
       }, {
