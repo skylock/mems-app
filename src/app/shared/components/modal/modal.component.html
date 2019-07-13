@@ -2,6 +2,11 @@
   title="{{ popupTitle }}"
   [(visible)]="isPopupVisible"
   (onShown)="onShown()"
+  (onHidden)="onHidden()"
+  [showTitle]="true"
+  [dragEnabled]="false"
+  [closeOnOutsideClick]="true"
+  [shading]="true"
 >
 
 <!--  <div *dxTemplate="let data of 'content'">-->

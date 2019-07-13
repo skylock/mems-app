@@ -18,6 +18,10 @@ export class ModalComponent {
   onShown() {
     this.popupTitle = this.title;
   }
+
+  onHidden() {
+    this.isPopupVisible = false;
+  }
 }
 
 @NgModule({
