@@ -14,38 +14,48 @@ export class MaterialsComponent implements OnInit {
   isPopupVisible: boolean;
   filteredData: any;
   xAxisFilterTypes: any;
+  yAxisFilterTypes: any;
   xAxisCurrentFilter: any;
+  yAxisCurrentFilter: any;
+
+
   isSplineChart = false;
   chartType = 'bar';
-
   @ViewChild(DxDataGridComponent, { static: false }) dataGrid: DxDataGridComponent;
 
   constructor(depositionService: DepositionService) {
-    this.depositionResults = depositionService.getResults();
-    this.xAxisFilterTypes = [{
-      key: 'nitrogenFlow',
-      name: 'Debit de Azot'
-    }, {
-      key: 'pressure',
-      name: 'Presiunea'
-    }, {
-      key: 'time',
-      name: 'Timp'
-    }, {
-      key: 'temperature',
-      name: 'Temperatura'
-    }, {
-      key: 'roughness',
-      name: 'Rugozitatea'
-    }, {
-      key: 'adhesion',
-      name: 'Forta de Adeziune'
-    }, {
-      key: 'intermediateLayer',
-      name: 'Strat Intermediar'
-    }];
+    const filterTypes = [
+      {
+        key: 'nitrogenFlow',
+        name: 'Debit de Azot'
+      }, {
+        key: 'pressure',
+        name: 'Presiunea'
+      }, {
+        key: 'time',
+        name: 'Timp'
+      }, {
+        key: 'temperature',
+        name: 'Temperatura'
+      }, {
+        key: 'roughness',
+        name: 'Rugozitatea'
+      }, {
+        key: 'adhesion',
+        name: 'Forta de Adeziune'
+      }, {
+        key: 'intermediateLayer',
+        name: 'Strat Intermediar'
+      }
+    ];
 
+    this.depositionResults = depositionService.getResults();
+
+    this.xAxisFilterTypes = filterTypes;
     this.xAxisCurrentFilter = this.xAxisFilterTypes[0].key;
+
+    this.yAxisFilterTypes = filterTypes;
+    this.yAxisCurrentFilter = this.yAxisFilterTypes[0].key;
   }
 
   ngOnInit() {
