@@ -1,4 +1,4 @@
-import { Component, Input, NgModule } from '@angular/core';
+import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';
 import { DxPopupModule } from 'devextreme-angular';
 import { CommonModule } from '@angular/common';
 
@@ -8,19 +8,27 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent {
-  @Input()
-  isPopupVisible: boolean;
+  private isVisible;
+  popupTitle: string;
+
   @Input()
   title: string;
 
-  popupTitle: string;
+  @Input()
+  get visible() {
+    return this.isVisible;
+  }
+
+  set visible(val) {
+    this.isVisible = val;
+    this.visibleChange.emit(this.isVisible);
+  }
+
+  @Output()
+  visibleChange =  new EventEmitter<boolean>();
 
   onShown() {
     this.popupTitle = this.title;
-  }
-
-  onHidden() {
-    this.isPopupVisible = false;
   }
 }
 

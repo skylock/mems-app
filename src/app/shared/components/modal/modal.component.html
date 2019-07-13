@@ -1,8 +1,7 @@
 <dx-popup
   title="{{ popupTitle }}"
-  [(visible)]="isPopupVisible"
+  [(visible)]="visible"
   (onShown)="onShown()"
-  (onHidden)="onHidden()"
   [showTitle]="true"
   [dragEnabled]="false"
   [closeOnOutsideClick]="true"
