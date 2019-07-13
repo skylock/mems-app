@@ -1,5 +1,4 @@
-<dx-popup
-  class="popup"
+<dx-popup class="popup"
   [showTitle]="true"
   [title]="popupTitle"
   [dragEnabled]="false"
@@ -53,10 +52,12 @@
                 [showBorders]="false"
                 [columnAutoWidth]="true"
                 [columnHidingEnabled]="true"
+                [hoverStateEnabled]="true"
+                (onToolbarPreparing)="onToolbarPreparing($event)">
   >
-    <dxo-load-panel
-      [enabled]="true">
-    </dxo-load-panel>
+    <dxo-grouping [autoExpandAll]="true"></dxo-grouping>
+    <dxo-column-chooser [enabled]="true"></dxo-column-chooser>
+    <dxo-load-panel [enabled]="true"></dxo-load-panel>
 
     <dxo-header-filter [visible]="true" [allowSearch]="true"></dxo-header-filter>
     <dxo-filter-row
