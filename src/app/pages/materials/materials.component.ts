@@ -17,7 +17,8 @@ export class MaterialsComponent implements OnInit {
   yAxisFilterTypes: any;
   xAxisCurrentFilter: any;
   yAxisCurrentFilter: any;
-
+  xAxisTitle: any;
+  yAxisTitle: any;
 
   isSplineChart = false;
   chartType = 'bar';
@@ -129,10 +130,12 @@ export class MaterialsComponent implements OnInit {
   }
 
   onXAxisValueChanged() {
-    console.log('onChange xAxis', this.xAxisCurrentFilter);
+    this.yAxisTitle = this.xAxisFilterTypes.filter(f => f.key === this.xAxisCurrentFilter);
+    console.log('onChange chartTitle.yAxis', this.xAxisTitle);
   }
 
   onYAxisValueChanged() {
-    console.log('onChange yAxis', this.yAxisCurrentFilter);
+    this.xAxisTitle = this.yAxisFilterTypes.filter(f => f.key === this.yAxisCurrentFilter);
+    console.log('onChange chartTitle.yAxis', this.xAxisTitle);
   }
 }
