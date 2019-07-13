@@ -8,8 +8,8 @@
              valueField - y axis
        -->
       <dxi-series
-        argumentField="label"
-        valueField="roughness"
+        [argumentField]="xAxisCurrentFilter"
+        [valueField]="yAxisCurrentFilter"
         name="Rugozitatea medie"
         [type]="chartType"
         color="#d8bfa2"
@@ -27,16 +27,6 @@
     <div class="options">
       <div class="caption">Configurează</div>
       <div class="option">
-        <span>Axa X</span>
-        <dx-select-box
-          id="xAxisFilter"
-          [items]="xAxisFilterTypes"
-          [(value)]="xAxisCurrentFilter"
-          valueExpr="key"
-          displayExpr="name"
-        ></dx-select-box>
-      </div>
-      <div class="option">
         <span>Axa Y</span>
         <dx-select-box
           id="yAxisFilter"
@@ -44,6 +34,18 @@
           [(value)]="yAxisCurrentFilter"
           valueExpr="key"
           displayExpr="name"
+          (onValueChanged)="onYAxisValueChanged()">
+          ></dx-select-box>
+      </div>
+      <div class="option">
+        <span>Axa X</span>
+        <dx-select-box
+          id="xAxisFilter"
+          [items]="xAxisFilterTypes"
+          [(value)]="xAxisCurrentFilter"
+          valueExpr="key"
+          displayExpr="name"
+          (onValueChanged)="onXAxisValueChanged()">
         ></dx-select-box>
       </div>
       <div class="option">
