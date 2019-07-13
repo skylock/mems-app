@@ -11,55 +11,80 @@ $color-highlight: #ee3900;
 }
 
 // entire toolbar panel
-::ng-deep #gridContainer .dx-datagrid-header-panel {
-  padding: 0;
-  background-color: $color-primary-light;
+::ng-deep #gridContainer {
 
-  // toolbar height
-  .dx-toolbar-items-container {
-    height: $toolbar-item-height;
+  .dx-datagrid-header-panel {
+    padding: 0;
+    background-color: $color-primary-light;
 
-    // toolbar is split in 3 sections before | center | after
-    .dx-toolbar-before {
-      padding-left: 15px;
-    }
-
-    .dx-toolbar-before, .dx-toolbar-center {
-      .dx-button-text {
-       display: block;
-     }
-    }
-
-    .dx-toolbar-after {
-      .dx-button-content .dx-icon {
-        padding-top: 7px;
-      }
-    }
-
-  }
-
-  // toolbar container
-  .dx-toolbar {
-    margin: 0;
-    padding-right: 20px;
-    background-color: transparent;
-  }
-
-  .dx-toolbar-item {
-    .dx-button {
+    // toolbar height
+    .dx-toolbar-items-container {
       height: $toolbar-item-height;
 
-      .dx-button-content {
-        padding: 15px 16px;
+      // toolbar is split in 3 sections before | center | after
+      .dx-toolbar-before {
+        padding-left: 15px;
       }
+
+      .dx-toolbar-before, .dx-toolbar-center {
+        .dx-button-text {
+          display: block;
+        }
+      }
+
+      .dx-toolbar-after {
+        .dx-button-content .dx-icon {
+          padding-top: 7px;
+        }
+      }
+
     }
 
-    .dx-state-hover {
-      color: $color-highlight;
-      i {
-        color: $color-highlight;
-      }
-      background-color: $color-primary-dark
+    // toolbar container
+    .dx-toolbar {
+      margin: 0;
+      padding-right: 20px;
+      background-color: transparent;
     }
+
+    .dx-toolbar-item {
+      .dx-button {
+        height: $toolbar-item-height;
+
+        .dx-button-content {
+          padding: 15px 16px;
+        }
+      }
+
+      .dx-state-hover {
+        color: $color-highlight;
+        i {
+          color: $color-highlight;
+        }
+        background-color: $color-primary-dark
+      }
+    }
+  }
+}
+
+
+::ng-deep .options {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: rgba(191, 191, 191, 0.15);
+
+  .caption {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .option {
+    margin-top: 10px;
+  }
+  .option > span {
+    margin-right: 10px;
+  }
+  .option > .dx-selectbox {
+    display: inline-block;
+    vertical-align: middle;
   }
 }
