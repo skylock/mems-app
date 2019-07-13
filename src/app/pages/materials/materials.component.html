@@ -14,8 +14,13 @@
         [type]="chartType"
         color="#d8bfa2"
       >
-        <dxo-label [visible]="true" >
-          <!-- Settings for all point labels of an individual series -->
+        <!-- Settings for all point labels of an individual series -->
+        <dxo-label
+          [visible]="true">
+          <dxo-format
+            type="fixedPoint"
+            [precision]="1"
+          ></dxo-format>
         </dxo-label>
       </dxi-series>
       <dxo-legend
@@ -77,6 +82,7 @@
       class="cls"
       dataField="label"
       caption="Sample"
+      filterValue="NbN"
     >
     </dxi-column>
     <dxi-column
