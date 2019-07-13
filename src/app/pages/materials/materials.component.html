@@ -20,6 +20,35 @@
       </dxo-legend>
       <dxo-export [enabled]="true"></dxo-export>
     </dx-chart>
+    <div class="options">
+      <div class="caption">Configure</div>
+      <div class="option">
+        <span>X Axis</span>
+        <dx-select-box
+          id="xAxisFilter"
+          [items]="xAxisFilterTypes"
+          [(value)]="xAxisCurrentFilter"
+          valueExpr="key"
+          displayExpr="name"
+        ></dx-select-box>
+      </div>
+      <div class="option">
+        <span>Y Axis</span>
+        <dx-select-box
+          id="yAxisFilter"
+          [items]="xAxisFilterTypes"
+          [(value)]="xAxisCurrentFilter"
+          valueExpr="key"
+          displayExpr="name"
+        ></dx-select-box>
+      </div>
+      <div class="option">
+        <dx-check-box
+          text="Spline Chart"
+          [(value)]="isSplineChart"
+          (onValueChanged)="toggleChartType()"></dx-check-box>
+      </div>
+    </div>
   </div>
 </app-modal>
 

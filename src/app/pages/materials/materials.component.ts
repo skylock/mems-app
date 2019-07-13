@@ -13,11 +13,25 @@ export class MaterialsComponent implements OnInit {
   depositionResults: Deposition[];
   isPopupVisible: boolean;
   filteredData: any;
+  xAxisFilterTypes: any;
+  xAxisCurrentFilter: any;
+  isSplineChart = false;
 
   @ViewChild(DxDataGridComponent, { static: false }) dataGrid: DxDataGridComponent;
 
   constructor(depositionService: DepositionService) {
     this.depositionResults = depositionService.getResults();
+    this.xAxisFilterTypes = [{
+      key: 'temperature',
+      name: 'Temperature'
+    }, {
+      key: 'roughness',
+      name: 'Roughness'
+    }, {
+      key: 'adhesion',
+      name: 'Adhesion'
+    }];
+    this.xAxisCurrentFilter = this.xAxisFilterTypes[0].key;
   }
 
   ngOnInit() {
@@ -78,5 +92,9 @@ export class MaterialsComponent implements OnInit {
     this.dataGrid.instance.refresh();
     this.dataGrid.instance.clearFilter('row');
     this.dataGrid.instance.clearFilter('header');
+  }
+
+  toggleChartType() {
+
   }
 }
