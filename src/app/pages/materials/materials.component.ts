@@ -22,15 +22,28 @@ export class MaterialsComponent implements OnInit {
   constructor(depositionService: DepositionService) {
     this.depositionResults = depositionService.getResults();
     this.xAxisFilterTypes = [{
+      key: 'nitrogenFlow',
+      name: 'Debit de Azot'
+    }, {
+      key: 'pressure',
+      name: 'Presiunea'
+    }, {
+      key: 'time',
+      name: 'Timp'
+    }, {
       key: 'temperature',
-      name: 'Temperature'
+      name: 'Temperatura'
     }, {
       key: 'roughness',
-      name: 'Roughness'
+      name: 'Rugozitatea'
     }, {
       key: 'adhesion',
-      name: 'Adhesion'
+      name: 'Forta de Adeziune'
+    }, {
+      key: 'intermediateLayer',
+      name: 'Strat Intermediar'
     }];
+
     this.xAxisCurrentFilter = this.xAxisFilterTypes[0].key;
   }
 
@@ -69,7 +82,7 @@ export class MaterialsComponent implements OnInit {
           icon: 'remove'
         }
     }, {
-      location: 'center',
+      location: 'before',
       widget: 'dxButton',
       options: {
         text: 'Chart',
