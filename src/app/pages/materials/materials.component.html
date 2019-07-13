@@ -21,9 +21,9 @@
       <dxo-export [enabled]="true"></dxo-export>
     </dx-chart>
     <div class="options">
-      <div class="caption">Configure</div>
+      <div class="caption">Configurează</div>
       <div class="option">
-        <span>X Axis</span>
+        <span>Axa X</span>
         <dx-select-box
           id="xAxisFilter"
           [items]="xAxisFilterTypes"
@@ -33,7 +33,7 @@
         ></dx-select-box>
       </div>
       <div class="option">
-        <span>Y Axis</span>
+        <span>Axa Y</span>
         <dx-select-box
           id="yAxisFilter"
           [items]="xAxisFilterTypes"
@@ -46,7 +46,7 @@
         <dx-check-box
           text="Spline Chart"
           [(value)]="isSplineChart"
-          (onValueChanged)="toggleChartType()"></dx-check-box>
+          (onValueChanged)="toggleChartType($event)"></dx-check-box>
       </div>
     </div>
   </div>

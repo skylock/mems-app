@@ -107,7 +107,10 @@ export class MaterialsComponent implements OnInit {
     this.dataGrid.instance.clearFilter('header');
   }
 
-  toggleChartType() {
-
+  toggleChartType($event) {
+    console.log('clicked', $event.value);
+    // e.component.option({
+    //   text: this.isSplineChart ? 'bar' : 'spline'
+    // });
   }
 }
