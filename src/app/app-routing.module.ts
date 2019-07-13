@@ -11,7 +11,7 @@ import { ModalModule } from './shared/components/modal/modal.component';
 
 const routes: Routes = [
   {
-    path: 'pages/materials',
+    path: 'materials',
     component: MaterialsComponent,
     canActivate: [ AuthGuardService ]
   },
