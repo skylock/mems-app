@@ -9,7 +9,7 @@ import { DxDataGridComponent } from 'devextreme-angular';
 })
 export class MaterialsComponent implements OnInit {
 
-  title = 'Rezultate Pulverizare Catodică - Magnetron';
+  title = 'Experimental Results - Direct Current Sputtering ';
   depositionResults: Deposition[];
   isPopupVisible: boolean;
   filteredData: any;
@@ -63,10 +63,9 @@ export class MaterialsComponent implements OnInit {
   ngOnInit() {
   }
 
-
-
   drawChart() {
     this.filteredData = this.dataGrid.instance.getVisibleRows().map(row => row.data);
+    console.log('[drawChart clicked] rows =>', this.filteredData);
     this.isPopupVisible = true;
   }
 

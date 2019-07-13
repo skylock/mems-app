@@ -5,6 +5,6 @@ export class AppInfoService {
   constructor() {}
 
   public get title() {
-    return 'Mems App';
+    return 'MEMS APP';
   }
 }
