@@ -37,7 +37,7 @@ export class MaterialsComponent implements OnInit {
       },
       {
         key: 'nitrogenFlow',
-        name: 'Debit de Azot [cm3/min]'
+        name: 'Debit de azot [cm3/min]'
       }, {
         key: 'pressure',
         name: 'Presiunea [mTorr]'
