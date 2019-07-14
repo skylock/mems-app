@@ -37,22 +37,22 @@ export class MaterialsComponent implements OnInit {
       },
       {
         key: 'nitrogenFlow',
-        name: 'Debit de Azot'
+        name: 'Debit de Azot [cm3/min]'
       }, {
         key: 'pressure',
-        name: 'Presiunea'
+        name: 'Presiunea [mTorr]'
       }, {
         key: 'time',
-        name: 'Timp'
+        name: 'Timp [min]'
       }, {
         key: 'temperature',
-        name: 'Temperatura'
+        name: 'Temperatura [oC]'
       }, {
         key: 'roughness',
-        name: 'Rugozitatea'
+        name: 'Rugozitatea [nm]'
       }, {
         key: 'adhesion',
-        name: 'Forta de Adeziune'
+        name: 'Forta de adeziune [nN]'
       }, {
         key: 'intermediateLayer',
         name: 'Strat Intermediar'
