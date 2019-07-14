@@ -33,29 +33,29 @@ export class MaterialsComponent implements OnInit {
     const filterTypes = [
       {
         key: 'label',
-        name: 'Nume Proba'
+        name: 'Nume proba'
       },
       {
         key: 'nitrogenFlow',
-        name: 'Debit de azot [cm3/min]'
+        name: 'Debit de azot'
       }, {
         key: 'pressure',
-        name: 'Presiunea [mTorr]'
+        name: 'Presiunea'
       }, {
         key: 'time',
-        name: 'Timp [min]'
+        name: 'Timp'
       }, {
         key: 'temperature',
-        name: 'Temperatura [oC]'
+        name: 'Temperatura'
       }, {
         key: 'roughness',
-        name: 'Rugozitatea [nm]'
+        name: 'Rugozitatea'
       }, {
         key: 'adhesion',
-        name: 'Forta de adeziune [nN]'
+        name: 'Forta de adeziune'
       }, {
         key: 'intermediateLayer',
-        name: 'Strat Intermediar'
+        name: 'Strat intermediar'
       }
     ];
 
@@ -139,11 +139,43 @@ export class MaterialsComponent implements OnInit {
 
   onXAxisFilterChange($event: any) {
     this.argumentAxisTitle = this.chartFilter.xAxisTypes.filter(
-      f => f.key.includes($event)).map(o => o.name);
+      f => f.key.includes($event)).map(o => this.addMeasureUnit(o));
   }
 
   onYAxisFilterChange($event: any) {
     this.valueAxisTitle = this.chartFilter.yAxisTypes.filter(
-      f => f.key.includes($event)).map(o => o.name);
+      f => f.key.includes($event)).map(o => this.addMeasureUnit(o));
+  }
+
+  addMeasureUnit(parameter) {
+    if (parameter.name.includes('azot')) {
+      return `${parameter.name} [cm&#179;/min]`;
+    }
+
+    if (parameter.name.includes('Temperatura')) {
+      return `${parameter.name}  [&#8304;C]`;
+    }
+
+    if (parameter.name.includes('adeziune')) {
+      return `${parameter.name}  [nN]`;
+    }
+
+    if (parameter.name.includes('Rugozitatea')) {
+      return `${parameter.name}  [nm]`;
+    }
+
+    if (parameter.name.includes('Rugozitatea')) {
+      return `${parameter.name}  [nm]`;
+    }
+
+    if (parameter.name.includes('Presiunea')) {
+      return `${parameter.name} [mTorr]`;
+    }
+
+    if (parameter.name.includes('Timp')) {
+      return `${parameter.name}   [min]`;
+    }
+    return parameter.name;
   }
 }
+
