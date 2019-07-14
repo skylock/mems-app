@@ -33,7 +33,7 @@ export class MaterialsComponent implements OnInit {
     const filterTypes = [
       {
         key: 'label',
-        name: 'Nume proba'
+        name: 'Denumire proba'
       },
       {
         key: 'nitrogenFlow',
