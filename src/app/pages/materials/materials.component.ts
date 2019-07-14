@@ -25,6 +25,7 @@ export class MaterialsComponent implements OnInit {
   chartType = 'bar';
   valueAxisTitle: any;
   argumentAxisTitle: any;
+  chartTypeText = 'Spline';
 
   @ViewChild(DxDataGridComponent, { static: false }) dataGrid: DxDataGridComponent;
 
@@ -133,6 +134,7 @@ export class MaterialsComponent implements OnInit {
   toggleChartType($event) {
     console.log('clicked', $event.value);
     this.chartType =  !this.isSplineChart ? 'bar' : 'spline';
+    this.chartTypeText =  !this.isSplineChart ? 'Spline' : 'Bars';
   }
 
   onXAxisFilterChange($event: any) {
