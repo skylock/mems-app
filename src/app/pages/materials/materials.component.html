@@ -98,8 +98,22 @@
                 [hoverStateEnabled]="true"
                 (onToolbarPreparing)="onToolbarPreparing($event)">
 
-<!--    <dxo-column-chooser [enabled]="true"></dxo-column-chooser>-->
     <dxo-load-panel [enabled]="true"></dxo-load-panel>
+
+    <dxo-editing
+      [allowUpdating]="true"
+      [allowAdding]="true"
+      [allowDragging]="true"
+      [allowDeleting]="true">
+      <dxo-texts [confirmDeleteMessage]="null"></dxo-texts>
+    </dxo-editing>
+
+    <dxo-selection
+      mode="multiple"
+      [allowSelectAll]="true">
+    </dxo-selection>
+
+    <dxo-export [enabled]="true"></dxo-export>
 
     <dxo-header-filter [visible]="true" [allowSearch]="true"></dxo-header-filter>
     <dxo-filter-row
@@ -165,4 +179,6 @@
     </dxi-column>
   </dx-data-grid>
 </div>
+
+
 

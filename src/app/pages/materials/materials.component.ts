@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Deposition, DepositionService } from '../../shared/services/deposition.service';
 import { DxDataGridComponent } from 'devextreme-angular';
-import { collectAllDependants } from 'ts-loader/dist/types/utils';
 
 @Component({
   selector: 'app-materials',
@@ -76,6 +75,10 @@ export class MaterialsComponent implements OnInit {
   ngOnInit() {
   }
 
+  addRow() {
+    this.dataGrid.instance.addRow();
+  }
+
   onToolbarPreparing(e) {
     e.toolbarOptions.items.unshift( {
         location: 'before',
@@ -83,22 +86,8 @@ export class MaterialsComponent implements OnInit {
         options: {
           type: 'Normal',
           text: 'Add',
-          icon: 'add'
-        }
-      }, {
-        location: 'before',
-        widget: 'dxButton',
-        options: {
-          text: 'Edit',
-          icon: 'edit'
-        }
-      },
-      {
-        location: 'before',
-        widget: 'dxButton',
-        options: {
-          text: 'Remove',
-          icon: 'remove'
+          icon: 'add',
+          onClick: this.addRow.bind(this)
         }
       }, {
         location: 'before',
@@ -118,6 +107,17 @@ export class MaterialsComponent implements OnInit {
           onClick: this.refreshDataGrid.bind(this)
         }
       });
+    console.log(e.toolbarOptions.items);
+    // Remove add row button from the toolbar
+    e.toolbarOptions.items.forEach((item, index, object) => {
+      if (item.name === 'addRowButton') {
+        object.splice(index, 1);
+      }
+
+      if (item.name === 'exportButton') {
+        item.location = 'before';
+      }
+    });
   }
 
   drawChart() {
