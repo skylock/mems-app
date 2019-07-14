@@ -10,11 +10,12 @@
       <dxi-value-axis
         name="value-axis"
         [allowDecimals]="false">
-        <dxo-title [text]="valueAxisTitle">
-<!--          <dxo-font color="#ff950c"></dxo-font>-->
+        <dxo-title [text]="valueAxisTitle"
+        >
+          <dxo-font color="black" family="Times New Roman"></dxo-font>
         </dxo-title>
         <dxo-label>
-<!--          <dxo-font color="#ff950c"></dxo-font>-->
+          <dxo-font color="black" family="Times New Roman"></dxo-font>
         </dxo-label>
       </dxi-value-axis>
 
@@ -22,10 +23,10 @@
         name="argument-axis"
         [allowDecimals]="false">
         <dxo-title [text]="argumentAxisTitle">
-<!--          <dxo-font color="#ff950c"></dxo-font>-->
+          <dxo-font color="black" family="Times New Roman"></dxo-font>
         </dxo-title>
         <dxo-label>
-<!--          <dxo-font color="#ff950c"></dxo-font>-->
+          <dxo-font color="black" family="Times New Roman"></dxo-font>
         </dxo-label>
       </dxo-argument-axis>
 
@@ -39,15 +40,8 @@
         <!-- Settings for all point labels of an individual series -->
         <dxo-label
           [visible]="true">
-          <dxo-format
-            type="fixedPoint"
-            [precision]="1"
-          ></dxo-format>
-          <dxo-font
-            color="black"
-            family="Times New Roman"
-          >
-          </dxo-font>
+          <dxo-format type="fixedPoint" [precision]="1"></dxo-format>
+          <dxo-font color="black" family="Times New Roman"></dxo-font>
         </dxo-label>
       </dxi-series>
       <dxo-legend
