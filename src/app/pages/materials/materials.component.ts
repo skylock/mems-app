@@ -66,34 +66,32 @@ export class MaterialsComponent implements OnInit {
     };
 
     this.xAxisCurrentFilter = this.chartFilter.xAxisTypes[0].key;
+    this.argumentAxisTitle = this.chartFilter.yAxisTypes[0].name;
+
     this.yAxisCurrentFilter = this.chartFilter.xAxisTypes[6].key;
+    this.valueAxisTitle = this.chartFilter.yAxisTypes[6].name;
   }
 
   ngOnInit() {
   }
 
-  drawChart() {
-    this.filteredData = this.dataGrid.instance.getVisibleRows().map(row => row.data);
-    this.isPopupVisible = true;
-  }
-
   onToolbarPreparing(e) {
     e.toolbarOptions.items.unshift( {
-      location: 'before',
-      widget: 'dxButton',
-      options: {
-        type: 'Normal',
-        text: 'Add',
-        icon: 'add'
-      }
-    }, {
-      location: 'before',
-      widget: 'dxButton',
-      options: {
-        text: 'Edit',
-        icon: 'edit'
-      }
-    },
+        location: 'before',
+        widget: 'dxButton',
+        options: {
+          type: 'Normal',
+          text: 'Add',
+          icon: 'add'
+        }
+      }, {
+        location: 'before',
+        widget: 'dxButton',
+        options: {
+          text: 'Edit',
+          icon: 'edit'
+        }
+      },
       {
         location: 'before',
         widget: 'dxButton',
@@ -101,24 +99,29 @@ export class MaterialsComponent implements OnInit {
           text: 'Remove',
           icon: 'remove'
         }
-    }, {
-      location: 'before',
-      widget: 'dxButton',
-      options: {
-        text: 'Chart',
-        hint: 'Draw Chart Graph',
-        icon: 'chart',
-        onClick: this.drawChart.bind(this)
-      }
-    }, {
-      location: 'after',
-      widget: 'dxButton',
-      options: {
-        hint: 'Clear Filters',
-        icon: 'refresh',
-        onClick: this.refreshDataGrid.bind(this)
-      }
-    });
+      }, {
+        location: 'before',
+        widget: 'dxButton',
+        options: {
+          text: 'Chart',
+          hint: 'Draw Chart Graph',
+          icon: 'chart',
+          onClick: this.drawChart.bind(this)
+        }
+      }, {
+        location: 'after',
+        widget: 'dxButton',
+        options: {
+          hint: 'Clear Filters',
+          icon: 'refresh',
+          onClick: this.refreshDataGrid.bind(this)
+        }
+      });
+  }
+
+  drawChart() {
+    this.filteredData = this.dataGrid.instance.getVisibleRows().map(row => row.data);
+    this.isPopupVisible = true;
   }
 
   refreshDataGrid() {
@@ -132,12 +135,12 @@ export class MaterialsComponent implements OnInit {
     this.chartType =  !this.isSplineChart ? 'bar' : 'spline';
   }
 
-  onXAxisValueChanged($event: any) {
+  onXAxisFilterChange($event: any) {
     this.argumentAxisTitle = this.chartFilter.xAxisTypes.filter(
       f => f.key.includes($event)).map(o => o.name);
   }
 
-  onYAxisValueChanged($event: any) {
+  onYAxisFilterChange($event: any) {
     this.valueAxisTitle = this.chartFilter.yAxisTypes.filter(
       f => f.key.includes($event)).map(o => o.name);
   }

@@ -32,7 +32,7 @@
       <dxi-series
         [argumentField]="xAxisCurrentFilter"
         [valueField]="yAxisCurrentFilter"
-        [name]="xAxisCurrentFilter"
+        [name]="valueAxisTitle"
         [type]="chartType"
         color="#d8bfa2"
       >
@@ -64,7 +64,7 @@
           id="yAxisFilter"
           [items]="chartFilter.yAxisTypes"
           [(value)]="yAxisCurrentFilter"
-          (valueChange)="onYAxisValueChanged($event)"
+          (valueChange)="onYAxisFilterChange($event)"
           valueExpr="key"
           displayExpr="name"
         >
@@ -78,7 +78,7 @@
           [(value)]="xAxisCurrentFilter"
           valueExpr="key"
           displayExpr="name"
-          (valueChange)="onXAxisValueChanged($event)">
+          (valueChange)="onXAxisFilterChange($event)">
         ></dx-select-box>
       </div>
       <div class="option">
