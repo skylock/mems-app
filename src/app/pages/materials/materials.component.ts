@@ -72,10 +72,8 @@ export class MaterialsComponent implements OnInit {
   ngOnInit() {
   }
 
-  drawChart($e) {
+  drawChart() {
     this.filteredData = this.dataGrid.instance.getVisibleRows().map(row => row.data);
-    console.log('[drawChart clicked] rows =>', this.filteredData);
-    console.log('$e', $e);
     this.isPopupVisible = true;
   }
 
@@ -135,14 +133,12 @@ export class MaterialsComponent implements OnInit {
   }
 
   onXAxisValueChanged($event: any) {
-    // this.yAxisTitle = this.xAxisFilterTypes.filter(f => f.key === this.xAxisCurrentFilter);
-    this.argumentAxisTitle = $event;
-    console.log('onXAxisValueChanged', $event);
+    this.argumentAxisTitle = this.chartFilter.xAxisTypes.filter(
+      f => f.key.includes($event)).map(o => o.name);
   }
 
   onYAxisValueChanged($event: any) {
-    // this.xAxisTitle = this.yAxisFilterTypes.filter(f => f.key === this.yAxisCurrentFilter);
-    this.valueAxisTitle = $event;
-    console.log('onYAxisValueChanged', $event);
+    this.valueAxisTitle = this.chartFilter.yAxisTypes.filter(
+      f => f.key.includes($event)).map(o => o.name);
   }
 }
